@@ -1,31 +1,31 @@
 <template>
-    <div class="container center">
+    <div class="container is-centered">
         <div class="fixed-grid has-4-cols grid-box">
             <div class="grid">
-                <div class="cell cat"></div> <!-- empty cell -->
+                <div class="cell"></div> <!-- empty cell -->
                 
-                <div class="cell cat">category</div>
-                <div class="cell cat">category</div>
-                <div class="cell cat">category</div>
+                <CategoryItem class="cell cat">category</CategoryItem>
+                <CategoryItem class="cell cat">category</CategoryItem>
+                <CategoryItem class="cell cat">category</CategoryItem>
 
 
-                <div class="cell cat">category</div>
+                <CategoryItem class="cell cat">category</CategoryItem>
                 <Item class="cell"/>
                 <Item class="cell"/>
                 <Item class="cell"/>
 
 
-                <div class="cell cat">
+                <CategoryItem class="cell cat">
                     category
-                </div>
+                </CategoryItem>
                 <Item class="cell"/>
                 <Item class="cell"/>
                 <Item class="cell"/>
 
 
-                <div class="cell cat">
+                <CategoryItem class="cell cat">
                     category
-                </div>
+                </CategoryItem>
                 <Item class="cell"/>
                 <Item class="cell"/>
                 <Item class="cell"/>
@@ -37,6 +37,7 @@
 </template>
 
 <script>
+import CategoryItem from './category-item.vue';
 import item from './item-item.vue';
 
 
@@ -44,32 +45,21 @@ export default {
     name: 'grid-item',
     components: {
         Item: item,
-
+        CategoryItem: CategoryItem
     }
 }
 </script>
 
 
 <style>
-    .cat {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     
-    font-size: 18px;
-    font-weight: bold;
-    height: 100px;
-    width: 100px;
-    }
     .grid-box {
-        position: absolute;
-        top: 50%;
-        left: 25%;
+
+        
         grid-gap: 5px;
         height: 300px;
-        width: 330px;
-        max-width: 330px;
+        width: 400px;
+        max-width: 400px;
         max-height: 300px;
     }
 </style>

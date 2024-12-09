@@ -20,7 +20,7 @@
         
         </div>
 
-        <div class="dropdown floating-input" style="margin-top: 2em;" :class="{ 'is-active': filteredItems.length > 0 }">
+        <div class="dropdown floating-input" style="margin-top: 1em;" :class="{ 'is-active': filteredItems.length > 0 }">
         <div class="dropdown-menu" role="menu">
             <div class="dropdown-content ">
             <a
@@ -174,8 +174,8 @@ export default {
     }
     .floating-input {
         position: absolute;
+      
         top: 50%;
-        left: 50%;
         transform: translate(-50%, -50%);
         width: 300px;
         z-index: 10;
@@ -190,7 +190,7 @@ export default {
     }
     .search-button {
         margin-top: 1em;
-        font-size: 8px;
+        font-size: 10px;
     }
         
 </style>

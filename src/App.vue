@@ -1,7 +1,15 @@
 <template>
   <h1>StateGrid!</h1>
   <br>
-  <GridItem />
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <GridItem />
+      </div>
+    </div>
+
+  </div>
+  
 </template>
 
 <script>
