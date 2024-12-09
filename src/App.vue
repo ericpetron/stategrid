@@ -1,15 +1,16 @@
 <template>
-  <h1>Hello</h1>
-  <Item />
+  <h1>StateGrid!</h1>
+  <br>
+  <GridItem />
 </template>
 
 <script>
-
-
+import GridItem from './components/grid-item.vue';
 export default {
+
   name: 'App',
   components: {
-    
+    GridItem
   }
 }
 </script>
