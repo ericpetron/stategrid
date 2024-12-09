@@ -8,7 +8,7 @@
       <SearchBar @output="handleSubmit"/>
     </div>
     <div v-else-if="state === 'display'">
-      <p>{{ USstate }}</p>
+      <p class="state-style">{{ USstate }}</p>
     </div>
 
   
@@ -30,6 +30,7 @@ export default {
       USstate: "SAMPLE",
       state: "no-input",
       inputReceived: false,
+      rarity: "",
     };
   },
   methods: {
@@ -41,6 +42,12 @@ export default {
         this.state = "awaiting";
       } else if (this.state === "awaiting" && this.USstate !== "SAMPLE") {
         this.state = "display";
+
+
+
+
+
+        
       } 
     },
   },
@@ -59,5 +66,10 @@ export default {
   font-weight: bold;
   height: 100px;
   width: 100px;
+}
+.state-style {
+  font-size: 9px;
+  font-weight: bold;
+  
 }
 </style>

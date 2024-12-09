@@ -149,6 +149,10 @@ export default {
             this.filteredItems = [];
         },
         sendString() {
+            if (!(this.items.includes(this.output))) {
+                alert("Please enter a state");
+                return;
+            }
             this.$emit("output", this.output);
         },
         
