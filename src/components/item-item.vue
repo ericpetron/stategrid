@@ -1,13 +1,10 @@
 <template>
   <div @click="toggleState" class="item">
     
-    <div v-if="state === 'no-input'">
+    <div v-if="!state">
       <p>Before</p>
     </div>
-    <div v-else-if="state === 'awaiting'">
-      <SearchBar @output="handleSubmit"/>
-    </div>
-    <div v-else-if="state === 'display'">
+    <div v-else>
       <p class="state-style">{{ USstate }}</p>
     </div>
 
@@ -16,33 +13,31 @@
 </template>
 
 <script>
-import SearchBar from './search-bar.vue';
+
 
 
 export default {
 
   name: "Item-item",
+  props: ['USstate'],
   components: {
-    SearchBar
   },
   data() {
     return {
-      USstate: "SAMPLE",
-      state: "no-input",
+      state: false,
       inputReceived: false,
       rarity: "",
     };
   },
   methods: {
-    handleSubmit(output) {
-      this.USstate = output;
-    },
+    
       toggleState() {
-      if (this.state === "no-input") {
-        this.state = "awaiting";
-      } else if (this.state === "awaiting" && this.USstate !== "SAMPLE") {
-        this.state = "display";
-
+      if (this.state) {
+        this.state = true;
+      }
+      else {
+        this.state = false;
+      }
 
 
 
@@ -50,7 +45,6 @@ export default {
 
       } 
     },
-  },
   
 };
 </script>

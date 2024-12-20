@@ -1,5 +1,5 @@
 <template>
-    <div >
+    <div class="bdrop">
         <div class="container search floating-input box">
         <div class="field">
         <label class="label">Enter a state</label>
@@ -94,6 +94,9 @@ export default {
 </script>
 
 <style scoped>
+    .bdrop {
+        backdrop-filter: blur 2px;
+    }
     .search {
         border-color: gray;
         padding: 20px;
