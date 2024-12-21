@@ -14,10 +14,10 @@
 
 <script>
 import GridItem from './components/grid-item.vue';
-import FirebaseService from './services/FirebaseService';
+
 
 function getGrid() {
-  FirebaseService.fetchData()
+  
 }
 getGrid()
 export default {

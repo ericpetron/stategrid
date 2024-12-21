@@ -4,24 +4,23 @@
             <div class="grid">
                 <div class="cell"></div> <!-- empty cell -->
                 
-                <CategoryItem class="cell cat">category</CategoryItem>
-                <CategoryItem class="cell cat">category</CategoryItem>
-                <CategoryItem class="cell cat">category</CategoryItem>
+                <CategoryItem ref="cat-0" class="cell cat">category</CategoryItem>
+                <CategoryItem ref="cat-1" class="cell cat">category</CategoryItem>
+                <CategoryItem ref="cat-2" class="cell cat">category</CategoryItem>
 
-
-                <CategoryItem class="cell cat">category</CategoryItem>
+                <CategoryItem ref="cat-3" class="cell cat">category</CategoryItem>
                 <Item id="0" ref="item-0" @click="selectItem(0)" class="cell"/>
                 <Item id="1" ref="item-1" @click="selectItem(1)" class="cell"/>
                 <Item id="2" ref="item-2" @click="selectItem(2)" class="cell"/>
 
-                <CategoryItem class="cell cat">
-                    category
+                <CategoryItem ref="cat-4" class="cell cat">
+                    
                 </CategoryItem>
                 <Item id="3" ref="item-3" @click="selectItem(3)" class="cell"/>
                 <Item id="4" ref="item-4" @click="selectItem(4)" class="cell"/>
                 <Item id="5" ref="item-5" @click="selectItem(5)" class="cell"/>
 
-                <CategoryItem class="cell cat">
+                <CategoryItem ref="cat-5" class="cell cat">
                     category
                 </CategoryItem>
                 <Item id="6" ref="item-6" @click="selectItem(6)" class="cell"/>
@@ -43,8 +42,10 @@
 import CategoryItem from './category-item.vue';
 import item from './item-item.vue';
 import SearchBar from './search-bar.vue';
+import { useSupabase } from '@/services/useSupabase';
+// import { ref, onMounted } from 'vue';
 
-
+const { fetchData, insertData } = useSupabase()
 export default {
     name: 'grid-item',
     data() {
@@ -63,6 +64,8 @@ export default {
             this.currentlySelected = id;
             this.show = !this.show;
             console.log(id)
+            fetchData();
+            insertData(1,2);
         },
         handleSubmit(output) {
             if (this.currentlySelected === -1) {

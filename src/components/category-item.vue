@@ -1,5 +1,5 @@
 <template>
-    <div @click="toggleState" class="cat">
+    <div class="cat">
       
       <p>{{ category }}</p>
     

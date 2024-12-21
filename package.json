@@ -9,12 +9,11 @@
   },
   "dependencies": {
     "@primevue/themes": "^4.2.4",
+    "@supabase/supabase-js": "^2.47.10",
     "bulma": "^1.0.2",
     "core-js": "^3.8.3",
-    "firebase": "^10.14.1",
     "jquery": "^3.7.1",
-    "vue": "^3.2.13",
-    "vuefire": "^3.2.0"
+    "vue": "^3.2.13"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

@@ -5,9 +5,10 @@
       <p>Before</p>
     </div>
     <div v-else>
-      <p class="state-style">{{ USstate }}</p>
-      <img class="state-style" :src="flagLink" alt="State Flag">
       <p class="state-style">{{ rarity }}</p>
+      
+      <img class="img-style" :src="flagLink" alt="State Flag">
+      <p class="state-style">{{ USstate }}</p>
     </div>
 
   
@@ -96,9 +97,14 @@ export default {
   height: 150px;
   width: 150px;
 }
+.img-style {
+  
+  width: 100px;
+  background-size: cover;
+}
 .state-style {
   font-size: 9px;
   font-weight: bold;
-  
+  margin: 0.5em;
 }
 </style>
