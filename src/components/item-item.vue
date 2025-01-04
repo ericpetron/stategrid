@@ -16,7 +16,10 @@
 </template>
 
 <script>
+import { useSupabase } from '@/lib/useSupabase';
+// import { ref, onMounted } from 'vue';
 
+const { fetchData } = useSupabase()
 
 
 export default {
@@ -47,13 +50,19 @@ export default {
     }
   },
   methods: {
-    
-      setUSState() {
+    // set USSstate will do the intersection logic.
+      async setUSState() {
         this.inputReceived = true;
         this.state = true
         if (!Object.keys(this.listOfStates).includes(this.USstate)) {
           this.USstate = "Invalid State"
         }
+        const res = await fetchData(1,2);
+        console.log(res)
+        // supabase call here,
+        // then jsonifiy the response
+        // check if state is in the response
+        // if so run get rarity and get flag
         this.getFlag()
         this.getRarity()
 

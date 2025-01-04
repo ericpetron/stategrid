@@ -42,10 +42,7 @@
 import CategoryItem from './category-item.vue';
 import item from './item-item.vue';
 import SearchBar from './search-bar.vue';
-import { useSupabase } from '@/services/useSupabase';
-// import { ref, onMounted } from 'vue';
 
-const { fetchData, insertData } = useSupabase()
 export default {
     name: 'grid-item',
     data() {
@@ -64,8 +61,6 @@ export default {
             this.currentlySelected = id;
             this.show = !this.show;
             console.log(id)
-            fetchData();
-            insertData(1,2);
         },
         handleSubmit(output) {
             if (this.currentlySelected === -1) {

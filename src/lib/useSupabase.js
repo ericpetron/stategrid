@@ -1,7 +1,7 @@
 
 // src/composables/useSupabase.js
 import { ref } from 'vue'
-import { SupabaseClient as supabase } from '@supabase/supabase-js' 
+import { SupabaseClient as supabase } from './supabaseClient' 
 console.log(supabase)
 export function useSupabase() {
   const user = ref(null)
@@ -11,27 +11,21 @@ export function useSupabase() {
   
 
   // Database functions
-  async function fetchData(table, query = {}) {
+  async function fetchData(cat1, cat2) {
     try {
       loading.value = true
-      let queryBuilder = supabase.from(table).select()
-      
-      // Apply filters if any
-      if (query.filters) {
-        query.filters.forEach(filter => {
-          queryBuilder = queryBuilder.filter(
-            filter.column,
-            filter.operator,
-            filter.value
-          )
-        })
-      }
-      
+      let queryBuilder = supabase.rpc('on_sub', {cat1: cat1, cat2: cat2})
       const { data, error: fetchError } = await queryBuilder
+      console.log("data");
+      console.log(data);
       if (fetchError) throw fetchError
+
+
+
+
       return data
-    } catch (err) {
-      error.value = err.message
+    } catch (fetchError) {
+      error.value = fetchError.message
     } finally {
       loading.value = false
     }

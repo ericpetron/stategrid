@@ -1,9 +1,10 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+const supabaseUrl = "https://fvsibnzyttpklwcymegh.supabase.co"
+console.log(supabaseUrl)
+const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ2c2libnp5dHRwa2x3Y3ltZWdoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ3NzQyNDEsImV4cCI6MjA1MDM1MDI0MX0.zUsi_x27Pn9vM2BGCsOjdbfc3rMBROENfizTG3VUcoo"
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+export const SupabaseClient = createClient(supabaseUrl, supabaseAnonKey)
 
 // Example usage in a Vue component:
 // src/components/ExampleComponent.vue
