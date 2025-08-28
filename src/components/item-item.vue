@@ -83,6 +83,7 @@ export default {
         }
         if (this.USstate === "California" || this.USstate === "Texas" || this.USstate === "Florida" || this.USstate === "New York") {
           this.rarity = "Common"
+          //! change this
         }
         else {
           this.rarity = "Rare"
